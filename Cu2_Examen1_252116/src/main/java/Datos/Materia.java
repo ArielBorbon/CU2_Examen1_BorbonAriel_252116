@@ -19,6 +19,12 @@ public class Materia {
         this.creditos = creditos;
     }
 
+    public Materia() {
+    }
+    
+    
+    
+
     public String getClave() {
         return clave;
     }

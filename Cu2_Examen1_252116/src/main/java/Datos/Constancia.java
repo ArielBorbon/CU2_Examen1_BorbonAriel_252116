@@ -21,6 +21,12 @@ public class Constancia {
         this.fechaEmision = LocalDateTime.now();
     }
 
+    public Constancia() {
+    }
+
+    
+    
+    
     public String getFolio() {
         return folio;
     }

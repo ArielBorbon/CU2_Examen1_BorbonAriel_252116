@@ -24,6 +24,12 @@ public class Inscripcion {
         this.materias = new ArrayList<>();
     }
 
+    public Inscripcion() {
+    }
+    
+    
+    
+
     public void agregarMateria(Materia materia) {
         this.materias.add(materia);
     }

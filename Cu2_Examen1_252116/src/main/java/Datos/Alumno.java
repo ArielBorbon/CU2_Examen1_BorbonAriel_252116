@@ -28,6 +28,11 @@ public class Alumno {
         this.inscripciones = new ArrayList<>();
     }
 
+    public Alumno() {
+    }
+    
+    
+
     public void agregarInscripcion(Inscripcion inscripcion) {
         this.inscripciones.add(inscripcion);
     }
