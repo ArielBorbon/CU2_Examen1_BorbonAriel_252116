@@ -1,5 +1,5 @@
 
-package Datos;
+package Modelo;
 
 import java.util.Objects;
 

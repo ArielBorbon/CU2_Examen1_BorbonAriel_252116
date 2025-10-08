@@ -1,5 +1,5 @@
 
-package Datos;
+package Modelo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,5 +1,5 @@
 
-package Datos;
+package Modelo;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
