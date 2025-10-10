@@ -74,7 +74,7 @@ public final class DataSource {
 
     private void cargarAlumnos() {
 
-        Alumno alu1 = new Alumno("21040056", "Juan Carlos", "Bodoque", "Sánchez", "Ingeniería en Software");
+        Alumno alu1 = new Alumno("21040056", "Ariel Eduardo", "Borbon", "Izaguirre", "Ingeniería en Software");
         Inscripcion insc1_1 = new Inscripcion("Primer Semestre", LocalDate.of(2024, 8, 12));
         getMateriasPorClave("SDP-101", "PRE-101", "IIS-101", "PRG-101", "ACI-101", "ING-101").forEach(insc1_1::agregarMateria);
 
@@ -90,14 +90,14 @@ public final class DataSource {
         alumnos.add(alu1);
 
 
-        Alumno alu2 = new Alumno("21040089", "Ana María", "García", "López", "Ingeniería en Software");
+        Alumno alu2 = new Alumno("21040089", "Sebastian", "Borquez", "Huerta", "Ingeniería en Software");
         Inscripcion insc2_1 = new Inscripcion("Primer Semestre", LocalDate.of(2025, 8, 11));
         getMateriasPorClave("SDP-101", "PRE-101", "IIS-101", "PRG-101", "ACI-101", "ING-101").forEach(insc2_1::agregarMateria);
         alu2.agregarInscripcion(insc2_1);
         alumnos.add(alu2);
 
 
-        Alumno alu3 = new Alumno("21040058", "Pedro", "Pascal", "Pérez", "Ingeniería en Software");
+        Alumno alu3 = new Alumno("21040058", "Alberto", "Jimenez", "Garcia", "Ingeniería en Software");
         Inscripcion insc3_1 = new Inscripcion("Primer Semestre", LocalDate.of(2024, 8, 12));
         getMateriasPorClave("SDP-101", "PRE-101", "IIS-101", "PRG-101", "ACI-101", "ING-101").forEach(insc3_1::agregarMateria);
 

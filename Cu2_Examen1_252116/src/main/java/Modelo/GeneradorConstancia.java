@@ -36,7 +36,7 @@ public class GeneradorConstancia {
         Optional<Alumno> alumnoOpt = alumnoDAO.buscarPorIdCompleto(idCompleto);
 
         if (alumnoOpt.isEmpty()) {
-            throw new IllegalArgumentException("No se encontró ningún alumno con el ID: " + idCompleto);
+            throw new IllegalArgumentException("No se encontró ningun alumno con el ID: " + idCompleto);
         }
 
         Alumno alumno = alumnoOpt.get();
