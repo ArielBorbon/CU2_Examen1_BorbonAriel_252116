@@ -206,6 +206,11 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGenerarConstanciaActionPerformed
 
+    
+    
+    /*
+    Este metodo prepara la tabla en la que trabajaremos en la lista
+    */
     private void configurarComponentesAdicionales() {
         String[] columnas = {"ID Alumno", "Nombre Completo", "Carrera"};
         this.tableModel = new DefaultTableModel(columnas, 0) {
@@ -235,6 +240,10 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
         }
         return null;
     }
+    
+    /*
+    Nos traemos los alumnos y los colocamos en la tabla
+    */
 
     public void mostrarAlumnosEnTabla(List<Alumno> alumnos) {
         tableModel.setRowCount(0);
@@ -248,6 +257,14 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
         }
     }
 
+    
+    
+    /*
+    LISTENERS PARA EL CONTROLADOR
+    */
+    
+    
+    
     public void mostrarAlumnoSeleccionado(String id, String nombre, String carrera) {
         txtIdAlumnoEncontrado.setText(id);
         txtNombreAlumnoEncontrado.setText(nombre);

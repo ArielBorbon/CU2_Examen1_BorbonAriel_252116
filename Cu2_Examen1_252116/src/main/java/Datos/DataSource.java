@@ -14,6 +14,9 @@ import java.util.stream.Stream;
  *
  * @author Ariel Eduardo Borbon Izaguirre
  *        ID:252116
+ * 
+ * 
+ * Esta clase contiene todos los datos de las materias y los alumnos inscritos
  */
 public final class DataSource {
 

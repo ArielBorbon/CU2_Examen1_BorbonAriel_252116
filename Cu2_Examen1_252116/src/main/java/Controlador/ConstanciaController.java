@@ -15,15 +15,17 @@ import javax.swing.event.DocumentListener;
  *
  * @author Ariel Eduardo Borbon Izaguirre
  *        ID:252116
+ * 
+ * Controlador entre la vista y modelo del proyecto
  */
 public class ConstanciaController {
 
     private final VistaGeneradorConstancia vista;
-    private final GeneradorConstancia servicio;
+    private final GeneradorConstancia modelo;
 
-    public ConstanciaController(VistaGeneradorConstancia vista, GeneradorConstancia servicio) {
+    public ConstanciaController(VistaGeneradorConstancia vista, GeneradorConstancia modelo) {
         this.vista = vista;
-        this.servicio = servicio;
+        this.modelo = modelo;
 
         asignarListeners();
     }
@@ -34,6 +36,9 @@ public class ConstanciaController {
         actualizarTablaDeAlumnos();
     }
 
+    /*
+    Metodo para colocarle listeners a la vista para poder controlarla desde el controlador
+    */
     private void asignarListeners() {
         vista.addBuscarListener(new DocumentListener() {
             @Override
@@ -64,12 +69,19 @@ public class ConstanciaController {
         vista.addSalirListener(e -> System.exit(0));
     }
 
+    
+    /*
+    Metodo para actualizar la tabla de alumnos de la vista
+    */
     private void actualizarTablaDeAlumnos() {
         String idParcial = vista.getIdBuscado();
-        List<Alumno> alumnosEncontrados = servicio.buscarAlumnos(idParcial);
+        List<Alumno> alumnosEncontrados = modelo.buscarAlumnos(idParcial);
         vista.mostrarAlumnosEnTabla(alumnosEncontrados);
     }
 
+    /*
+    Metodo para seleccionar alumno de la tabla de la vista
+    */
     private void seleccionarAlumno() {
         String[] datosFila = vista.getDatosFilaSeleccionada();
         if (datosFila != null) {
@@ -77,6 +89,10 @@ public class ConstanciaController {
         }
     }
 
+    
+    /*
+    Metodo para mostrar la constancia creada usando el modelo y la vista para colocarla ahi
+    */
     private void generarConstancia() {
         String idCompleto = vista.getIdAlumnoSeleccionado();
         if (idCompleto.isEmpty()) {
@@ -85,7 +101,7 @@ public class ConstanciaController {
         }
 
         try {
-            Constancia constancia = servicio.generarConstancia(idCompleto);
+            Constancia constancia = modelo.generarConstancia(idCompleto);
             vista.mostrarConstancia(constancia.getContenido());
         } catch (Exception ex) {
             vista.mostrarError("Error al generar la constancia:\n" + ex.getMessage());

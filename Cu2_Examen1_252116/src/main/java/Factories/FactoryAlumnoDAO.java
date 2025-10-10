@@ -10,7 +10,9 @@ import Datos.AlumnoDAO;
  */
 public class FactoryAlumnoDAO {
     
-    
+    /*
+    fabrica para generar DAOs de alumno para la dependency injeccion
+    */
     public static AlumnoDAO crearAlumnoDAO(){
         AlumnoDAO alumnoDAO = new AlumnoDAO();
         return alumnoDAO;

@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
  *
  * @author Ariel Eduardo Borbon Izaguirre
  *        ID:252116
+ * 
+ * Esta clase se usa como "Acceso de datos" que estan en el data source
  */
 public class AlumnoDAO implements IAlumnoDAO {
 
