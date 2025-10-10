@@ -2,10 +2,6 @@
 package Modelo;
 
 import Datos.IAlumnoDAO;
-import Modelo.Alumno;
-import Modelo.Constancia;
-import Modelo.Inscripcion;
-import Modelo.Materia;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
