@@ -8,7 +8,8 @@ import java.util.stream.Collectors;
 
 /**
  *
- * @author PC Gamer
+ * @author Ariel Eduardo Borbon Izaguirre
+ *        ID:252116
  */
 public class AlumnoDAO implements IAlumnoDAO {
 
@@ -17,9 +18,6 @@ public class AlumnoDAO implements IAlumnoDAO {
     @Override
     public List<Alumno> buscarPorIdParcial(String idParcial) {
 
-        if (idParcial == null || idParcial.trim().isEmpty()) {
-            return List.of(); 
-        }
 
         return dataSource.getAlumnos().stream()
                 .filter(alumno -> alumno.getId().startsWith(idParcial))

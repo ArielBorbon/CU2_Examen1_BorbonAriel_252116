@@ -1,15 +1,15 @@
-
 package Modelo;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  *
- * @author PC Gamer
+ * @author Ariel Eduardo Borbon Izaguirre
+ *        ID:252116
  */
-
 public class Alumno {
 
     private String id;
@@ -30,8 +30,18 @@ public class Alumno {
 
     public Alumno() {
     }
-    
-    
+
+    public String getNombreCompleto() {
+        return nombre + " " + apellidoPaterno + " " + apellidoMaterno;
+    }
+
+    public Optional<Inscripcion> getInscripcionActual() {
+        if (this.inscripciones.isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(this.inscripciones.get(this.inscripciones.size() - 1));
+    }
 
     public void agregarInscripcion(Inscripcion inscripcion) {
         this.inscripciones.add(inscripcion);
@@ -131,9 +141,5 @@ public class Alumno {
     public String toString() {
         return "Alumno{" + "id=" + id + ", nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", carrera=" + carrera + ", inscripciones=" + inscripciones + '}';
     }
-    
-    
-    
-    
-    
+
 }

@@ -7,8 +7,9 @@ import java.util.Optional;
 
 
 /**
- * 
- * @author PC Gamer
+ *
+ * @author Ariel Eduardo Borbon Izaguirre
+ *        ID:252116
  */
 public interface IAlumnoDAO {
 

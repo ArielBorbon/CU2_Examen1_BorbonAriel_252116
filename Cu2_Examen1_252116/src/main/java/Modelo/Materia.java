@@ -5,7 +5,8 @@ import java.util.Objects;
 
 /**
  *
- * @author PC Gamer
+ * @author Ariel Eduardo Borbon Izaguirre
+ *        ID:252116
  */
 public class Materia {
 
