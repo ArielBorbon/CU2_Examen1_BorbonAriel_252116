@@ -3,7 +3,7 @@ package Controlador;
 
 import Modelo.Alumno;
 import Modelo.Constancia;
-import Servicio.GeneradorConstancia;
+import Modelo.GeneradorConstancia;
 import Vista.VistaGeneradorConstancia;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -61,6 +61,7 @@ public class ConstanciaController {
         });
 
         vista.addGenerarConstanciaListener(e -> generarConstancia());
+        vista.addSalirListener(e -> System.exit(0));
     }
 
     private void actualizarTablaDeAlumnos() {

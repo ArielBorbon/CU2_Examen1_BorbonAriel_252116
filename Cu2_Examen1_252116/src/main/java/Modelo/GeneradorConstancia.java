@@ -1,5 +1,5 @@
 
-package Servicio;
+package Modelo;
 
 import Datos.IAlumnoDAO;
 import Modelo.Alumno;

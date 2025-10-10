@@ -2,9 +2,9 @@
 package Main;
 
 import Controlador.ConstanciaController;
-import Datos.FactoryAlumnoDAO;
+import Factories.FactoryAlumnoDAO;
 import Datos.IAlumnoDAO;
-import Servicio.GeneradorConstancia;
+import Modelo.GeneradorConstancia;
 import Vista.VistaGeneradorConstancia;
 
 /**

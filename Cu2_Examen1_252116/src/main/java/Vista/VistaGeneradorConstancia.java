@@ -1,4 +1,3 @@
-
 package Vista;
 
 import Modelo.Alumno;
@@ -11,8 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Ariel Eduardo Borbon Izaguirre
- *        ID:252116
+ * @author Ariel Eduardo Borbon Izaguirre ID:252116
  */
 public class VistaGeneradorConstancia extends javax.swing.JFrame {
 
@@ -51,7 +49,7 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
         txtNombreAlumnoEncontrado = new javax.swing.JTextField();
         txtCarreraAlumnoEncontrado = new javax.swing.JTextField();
         btnGenerarConstancia = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,12 +111,12 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 156, 150));
-        jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setBackground(new java.awt.Color(255, 156, 150));
+        btnSalir.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -151,7 +149,7 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton2)
+                            .addComponent(btnSalir)
                             .addGap(92, 92, 92)
                             .addComponent(btnGenerarConstancia))
                         .addComponent(txtNombreAlumnoEncontrado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
@@ -193,22 +191,20 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGenerarConstancia)
-                    .addComponent(jButton2))
+                    .addComponent(btnSalir))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnGenerarConstanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarConstanciaActionPerformed
 
     }//GEN-LAST:event_btnGenerarConstanciaActionPerformed
-
-
 
     private void configurarComponentesAdicionales() {
         String[] columnas = {"ID Alumno", "Nombre Completo", "Carrera"};
@@ -241,7 +237,7 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
     }
 
     public void mostrarAlumnosEnTabla(List<Alumno> alumnos) {
-        tableModel.setRowCount(0); 
+        tableModel.setRowCount(0);
         for (Alumno alumno : alumnos) {
             Object[] fila = {
                 alumno.getId(),
@@ -278,10 +274,14 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
         btnGenerarConstancia.addActionListener(listener);
     }
 
+    public void addSalirListener(ActionListener listener) {
+        btnSalir.addActionListener(listener);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarConstancia;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

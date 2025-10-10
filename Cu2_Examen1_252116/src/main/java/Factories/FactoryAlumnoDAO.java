@@ -1,5 +1,7 @@
 
-package Datos;
+package Factories;
+
+import Datos.AlumnoDAO;
 
 /**
  *
