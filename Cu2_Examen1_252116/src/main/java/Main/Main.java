@@ -18,11 +18,11 @@ public class Main {
 
         java.awt.EventQueue.invokeLater(() -> {
             IAlumnoDAO alumnoDAO = FactoryAlumnoDAO.crearAlumnoDAO();
-            GeneradorConstancia servicio = new GeneradorConstancia(alumnoDAO);
+            GeneradorConstancia modelo = new GeneradorConstancia(alumnoDAO);
 
             VistaGeneradorConstancia vista = new VistaGeneradorConstancia();
 
-            ConstanciaController controlador = new ConstanciaController(vista, servicio);
+            ConstanciaController controlador = new ConstanciaController(vista, modelo);
 
             controlador.iniciar();
         });
