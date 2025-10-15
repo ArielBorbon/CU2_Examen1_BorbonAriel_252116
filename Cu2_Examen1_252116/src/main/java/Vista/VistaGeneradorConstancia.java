@@ -1,6 +1,6 @@
 package Vista;
 
-import Modelo.Alumno;
+import DTO.AlumnoDTO;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.util.List;
@@ -245,13 +245,13 @@ public class VistaGeneradorConstancia extends javax.swing.JFrame {
     Nos traemos los alumnos y los colocamos en la tabla
     */
 
-    public void mostrarAlumnosEnTabla(List<Alumno> alumnos) {
+    public void mostrarAlumnosEnTabla(List<AlumnoDTO> alumnos) {
         tableModel.setRowCount(0);
-        for (Alumno alumno : alumnos) {
+        for (AlumnoDTO alumnoDTO : alumnos) { 
             Object[] fila = {
-                alumno.getId(),
-                alumno.getNombreCompleto(),
-                alumno.getCarrera()
+                alumnoDTO.getId(),
+                alumnoDTO.getNombreCompleto(), 
+                alumnoDTO.getCarrera()
             };
             tableModel.addRow(fila);
         }

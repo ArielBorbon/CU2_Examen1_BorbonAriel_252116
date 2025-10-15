@@ -1,32 +1,57 @@
-
 package Modelo;
 
+import DTO.AlumnoDTO;
 import Datos.IAlumnoDAO;
+import Mappers.AlumnoMapper;
+import Observer.Observer;
+import Observer.Subject;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 /**
  *
- * @author Ariel Eduardo Borbon Izaguirre
- *        ID:252116
+ * @author Ariel Eduardo Borbon Izaguirre ID:252116
  */
-public class GeneradorConstancia {
+public class GeneradorConstancia implements Subject {
 
     private final IAlumnoDAO alumnoDAO;
     private String folio;
+    private final List<Observer> observers; 
+    private List<AlumnoDTO> ultimosResultados;
 
     public GeneradorConstancia(IAlumnoDAO alumnoDAO) {
         this.alumnoDAO = alumnoDAO;
+        this.observers = new ArrayList<>();
     }
 
-
-    public List<Alumno> buscarAlumnos(String idParcial) {
-        return alumnoDAO.buscarPorIdParcial(idParcial);
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
     }
 
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(ultimosResultados);
+        }
+    }
+
+    public void buscarAlumnos(String idParcial) { 
+        List<Alumno> alumnosEncontrados = alumnoDAO.buscarPorIdParcial(idParcial);
+        
+        this.ultimosResultados = AlumnoMapper.toDTOList(alumnosEncontrados);
+        
+        notifyObservers();
+    }
 
     public Constancia generarConstancia(String idCompleto) {
         Optional<Alumno> alumnoOpt = alumnoDAO.buscarPorIdCompleto(idCompleto);
@@ -49,14 +74,12 @@ public class GeneradorConstancia {
         return new Constancia(folioC, contenido);
     }
 
-
     private String formatearContenido(Alumno alumno, Inscripcion inscripcion) {
         StringBuilder sb = new StringBuilder();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy");
         String fechaActual = LocalDate.now().format(formatter);
-        
+
         folio = "CERT-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
-        
 
         sb.append("--- CONSTANCIA DE ESTUDIOS ---");
         sb.append("\n");
